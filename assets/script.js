@@ -50,6 +50,7 @@ document.getElementById("cancelInput").onclick = function(event) {
 	document.getElementsByClassName("bubble-background")[0].style.visibility = "hidden";
 	calc.display.value = '';
 	}
+
 /* ==============================
           ADDITIONS
 ============================== */ 
@@ -149,3 +150,32 @@ input.addEventListener("keypress", function(event) {
 		createListElement();
 	}
 })
+
+
+/* ==============================
+         TAUX DE CHANGE
+============================== */
+
+var url="http://data.fixer.io/api/latest?access_key=99e153d0e20b5d4d2b3b778ab6751eae&base=EUR&symbols=EUR,GBP,JPY,USD";
+
+// define from currency, to currency, and amount
+from = 'EUR';
+to = 'GBP';
+amount = '10';
+
+// execute the conversion using the "convert" endpoint:
+function recupererValeur() {
+	$.ajax({
+			url: url,
+			dataType: 'jsonp',
+			success: function(res) {
+				var rates= res.rates;
+				var amount= document.getElementById('fromAmount').value;
+				var from= document.getElementById('from').value;
+				var to= document.getElementById('to').value;
+				
+				var resultat = amount * rates[to] / rates[from];
+				document.getElementById('toAmount').value = resultat;
+			}
+	});
+}

@@ -11,6 +11,7 @@
 
 <body>
 
+	<!--HORLOGE-->
 	<div id="horloge">
 
 		<div id="clock">
@@ -20,7 +21,40 @@
 			<i class="far fa-clock"></i>
 		</div>
 	</div>
+	
+	<!--TAUX DE CHANGE-->
+	<div id="box">
+		<div id="formChange">
+		 <h2>Taux de change</h2>
+			 <table>
+					 <tr>
+							 <td><input id="fromAmount" type="text" size="15" onkeyup="recupererValeur()"/></td>
+							 <td>
+									 <select id="from" onchange="recupererValeur()">
+										 <option value="EUR">€</option>
+										 <option value="USD">$ US</option>
+										 <option value="JPY">¥</option>
+									 </select>
+							 </td>
+					 </tr>
+					 <tr>
+							<td><input id="toAmount" type="text" size="15" disabled/></td>
+							 <td>
+									 <select id="to" onchange="recupererValeur()">
+										 <option value="GBP">£</option>
+										 <option value="JPY">¥</option>
+										 <option value="USD">$ US</option>
+									 </select>
+							 </td>
+					 </tr>
+			 </table>		
+		</div>
+		<div id="logoChange">
+			<i class="fas fa-dollar-sign"></i>
+		</div>
 
+	</div>
+    
 	<div id="main-container">
 
 		<!--HEADER-->
@@ -156,17 +190,13 @@
 							<span class="checkmark"></span>
 						</label>
 
-						<div class="listing">	
+						<div id="listing">	
 
-							<ul id="firstList">
+							<ul id="firstList" class="listTask">
 								<li>Aller aux toilettes</li>
 							</ul>
 
-						</div>
-
-						<div class="listing">	
-
-							<ul id="secondList">
+							<ul id="secondList" class="listTask">
 								<li>Lire la doc'</li>
 								<li>Relire la doc'</li>
 								<li>Interroger Google</li>

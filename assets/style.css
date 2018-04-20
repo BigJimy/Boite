@@ -243,7 +243,9 @@ p {
 
 #contactForm {
   font-family: Ubuntu, Arial, sans-serif;
-  color: #B23535; }
+  color: #B23535;
+  max-width: 800px;
+  margin: 0 auto; }
 
 #contactForm form {
   width: 80%;
@@ -571,5 +573,34 @@ p {
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /* Styles */ }
+#box {
+  position: fixed;
+  left: -220px;
+  top: 400px;
+  width: 270px;
+  height: 120px;
+  background-color: #273c75;
+  z-index: 1;
+  color: white;
+  padding: 10px;
+  box-shadow: 5px 5px 3px black; }
+  #box:hover {
+    left: 0; }
+  #box input {
+    height: 30px;
+    font-size: 20px;
+    padding-left: 5px;
+    width: 100px; }
+  #box select {
+    width: 50px;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    padding-left: 5px; }
+  #box #logoChange {
+    position: absolute;
+    right: 15px;
+    top: 30%;
+    font-size: 40px; }
 
 /*# sourceMappingURL=style.css.map */
