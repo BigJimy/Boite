@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Catull BQ Regular";
+    src: url(../../catull.ttf) format("truetype");
+}
+
+@import "partials/generic";
+@import "partials/horloge";
+@import "partials/calculatrice";
+@import "partials/compteur";
+@import "partials/additions";
+@import "partials/formulaire";
+@import "partials/slider";
+@import "partials/header";
+@import "partials/todolist";
+@import "partials/responsive";

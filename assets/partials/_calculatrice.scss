@@ -1,0 +1,108 @@
+#main-grid-container {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+	border-radius: 50px;
+	width: 100%;
+	min-height: 300px;
+	background-color: #fbc531;
+	margin-top: 70px;
+	grid-template-areas:
+     "calculatrice bubble"
+     "calculatrice logo";
+	
+	.bubble {
+		grid-area: bubble;
+		.bubble-background {
+			visibility: hidden;
+			position: relative;
+			background-color: whitesmoke;
+			margin: 20px;
+			border-radius: 20px;	
+			padding: 20px;
+			p {
+				font-size: 25px;
+				font-family: 'Black Han Sans', sans-serif;
+			}
+		
+		}
+	}	
+	.bubble-background:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 70%;
+		width: 0;
+		height: 0;
+		border: 29px solid transparent;
+		border-top-color: whitesmoke;
+		border-bottom: 0;
+		border-right: 0;
+		margin-left: -14.5px;
+		margin-bottom: -29px;
+	}
+
+	.logo {
+		grid-area: logo;
+		img {
+			width: 100%;
+			height: auto;
+			margin: 20px;
+		}
+	}
+}
+
+#calculatrice-container {
+	grid-area: calculatrice;
+	padding: 50px;
+	margin: 0 auto;
+	
+	.displayInput {
+		width: 95%;
+		height: 100px;
+		text-align: center;
+		background-color: #333;
+		color: whitesmoke;
+	}
+	.additionInput {
+		background-color: whitesmoke;
+		color: #000;
+	}
+	.soustractionInput {
+		background-color: whitesmoke;
+		color: #000;
+	}
+	.multiplicationInput {
+		background-color: whitesmoke;
+		color: #000;
+	}
+	.cancelInput {
+		background-color: #e84118;
+	}
+	.divisionInput {
+		background-color: whitesmoke;
+		color: #000;
+	}
+	.evalInput {
+		background-color: whitesmoke;
+		color: #000;
+	}
+	input {
+		width: 22%;
+		font-size: 50px;
+		border-radius: 10px;
+		margin: 5px;
+		background-color: #e1b12c;
+		color: whitesmoke;
+		border-style: none;
+		box-shadow: 3px 3px 5px #333;
+	}
+}
+
+#calculatorForm {
+	margin: 0 auto;
+	width: 100%;
+	grid-column: 1;
+}
+

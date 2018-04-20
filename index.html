@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>La boîte à outils</title>
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+	<div id="horloge">
+
+		<div id="clock">
+		</div>
+
+		<div class="logo-horloge">
+			<i class="far fa-clock"></i>
+		</div>
+	</div>
+
+	<div id="main-container">
+
+		<!--HEADER-->
+		<section id="header">
+			<span id="logo"><i class="fas fa-wrench"></i></span>
+			<h1>La Boîte à outils</h1>
+		</section>
+
+		<section class="space">
+		</section>
+
+		<!--SLIDER-->
+		<section>
+			<div class="wrapperSlider">
+
+				<img class="mySlides" src="assets/images/1.jpg">
+				<img class="mySlides" src="assets/images/2.jpg">
+				<img class="mySlides" src="assets/images/3.jpg">
+
+				<a class="btnSlide1" onclick="plusDivs(-1)"><span id = "btnLeft"><i class="fas fa-angle-left"></i></span></a>
+				<a class="btnSlide2" onclick="plusDivs(1)"><span id = "btnRight"><i class="fas fa-angle-right"></i></span></a>
+			</div>
+		</section>
+
+		<section class="space">
+		</section>
+
+		<!--COMPTEUR-->
+		<section id="strCounter">
+			<h1>
+				<span class="blue">C</span>
+				<span class="red">o</span>
+				<span class="yellow">m</span>
+				<span class="blue">p</span>
+				<span class="green">t</span>
+				<span class="red">e</span>
+				<span class="yellow">u</span>
+				<span class="red">r</span>
+			</h1>
+
+			<div id="searchbar">
+				<input id="str" value="" type="text" placeholder="Entrez une chaîne de caractères">
+				<button id="strBtn"><h2><i class='fas fa-search'></i></h2></button>
+			</div>
+
+			<div id="output"></div>
+
+		</section>
+
+		<section id="main-grid-container">
+
+			<!-- CALCULATRICE   -->
+			<div id="calculatrice-container">
+				<form id="calculatorForm" name="calc">
+					<input name="display" class="displayInput"><br/>
+					<input type="button" value="0" onClick="calc.display.value+='0'">
+					<input type="button" value="1" onClick="calc.display.value+='1'">
+					<input type="button" value="2" onClick="calc.display.value+='2'">
+					<input type="button" class="additionInput" value="+" onClick="calc.display.value+='+'"><br/>
+					<input type="button" value="3" onClick="calc.display.value+='3'">
+					<input type="button" value="4" onClick="calc.display.value+='4'">
+					<input type="button" value="5" onClick="calc.display.value+='5'">
+					<input type="button" class="soustractionInput" value="-" onClick="calc.display.value+='-'"><br/>
+					<input type="button" value="6" onClick="calc.display.value+='6'">
+					<input type="button" value="7" onClick="calc.display.value+='7'">
+					<input type="button" value="8" onClick="calc.display.value+='8'">
+					<input type="button" class="multiplicationInput" value="x" onClick="calc.display.value+='*'"><br/>
+					<input type="button" value="9" onClick="calc.display.value+='9'">
+					<input type="button" class="cancelInput" id="cancelInput" value="C">
+					<input type="button" class="evalInput" id="resultat" value="=">
+					<input type="button" class="divisionInput" value="&#247;" onClick="calc.display.value+='/'">
+				</form>
+			</div>
+
+			<div class="bubble">
+				<div class="bubble-background">
+					<p id="display" class="displayBubble"></p>
+				</div>
+			</div>
+
+			<div class="logo">
+				<img src="assets/images/calculator.png">
+			</div>
+
+		</section>
+
+		<section>
+		
+			<div id="additionListGrid">
+			
+				<div id="wrapperAddition">
+					<table width="400" height="300">
+						<tr>
+							<td>
+									<p id="number1">1</p>
+							</td>
+							<td>
+								<div class="symbols"> +</div>
+							</td>
+							<td>
+									<p id="number2">2</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<!--case vide-->
+							</td>
+							<td>
+								<input id="inputAddition" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<input id="btnAddition" type="button" value="VALIDER">
+							</td>							
+						</tr>
+						<tr>
+							<td colspan="3">
+								<p id="resultatAddition"></p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			
+			
+				<div id="toDoList">
+					<div class="listContainer">
+						<input type="text" id="userInput" placeholder="Ajouter une tâche">
+						<button id="enter"><i class="fas fa-check"></i></button><br/>
+
+						<label class="container"><i class="fas fa-exclamation-triangle"></i> Urgent
+							<input type="checkbox" name="isImportantField" id="isImportantField">
+							<span class="checkmark"></span>
+						</label>
+
+						<div class="listing">	
+
+							<ul id="firstList">
+								<li>Aller aux toilettes</li>
+							</ul>
+
+						</div>
+
+						<div class="listing">	
+
+							<ul id="secondList">
+								<li>Lire la doc'</li>
+								<li>Relire la doc'</li>
+								<li>Interroger Google</li>
+							</ul>
+
+						</div>							
+					</div>	
+				</div>
+				
+			</div>
+			
+		</section>
+
+
+		<!--CONTACT   -->
+		<section id="contactForm">
+			<form id="cf" method="post" action="">
+
+				<h1>Contactez-moi</h1>
+
+				<fieldset>
+
+					<label for="name">Nom</label>
+					<input type="text" id="name" name="name" class="stored" />
+
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" class="stored" />
+
+					<label for="message">Message</label>
+					<textarea id="message" name="message" class="stored"></textarea>
+
+				</fieldset>
+
+				<button type="submit">Envoyer</button>
+				<input id="clear" type="reset" value="X" />
+
+			</form>
+		</section>
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="assets/script.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+</body>
+
+</html>

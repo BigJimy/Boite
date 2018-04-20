@@ -1,0 +1,575 @@
+@font-face {
+  font-family: "Catull BQ Regular";
+  src: url(../../catull.ttf) format("truetype"); }
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #dcdde1; }
+
+p {
+  font-size: 14px; }
+
+#main-container {
+  margin: 50px 100px; }
+
+#clock {
+  color: #fff;
+  font-size: 30px;
+  padding: 0.4em 0em;
+  width: 80%;
+  margin: 0px;
+  font-family: Helvetica, Arial, serif;
+  text-align: center; }
+
+#horloge {
+  position: fixed;
+  left: -150px;
+  top: 300px;
+  width: 200px;
+  height: 60px;
+  background-color: rgba(47, 54, 64, 0.95);
+  z-index: 1;
+  color: white;
+  padding: 10px;
+  box-shadow: 5px 5px 3px black; }
+  #horloge:hover {
+    left: 0; }
+  #horloge .logo-horloge {
+    position: absolute;
+    right: 10px;
+    top: 20%;
+    font-size: 40px; }
+
+#main-grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  border-radius: 50px;
+  width: 100%;
+  min-height: 300px;
+  background-color: #fbc531;
+  margin-top: 70px;
+  grid-template-areas: "calculatrice bubble" "calculatrice logo"; }
+  #main-grid-container .bubble {
+    grid-area: bubble; }
+    #main-grid-container .bubble .bubble-background {
+      visibility: hidden;
+      position: relative;
+      background-color: whitesmoke;
+      margin: 20px;
+      border-radius: 20px;
+      padding: 20px; }
+      #main-grid-container .bubble .bubble-background p {
+        font-size: 25px;
+        font-family: 'Black Han Sans', sans-serif; }
+  #main-grid-container .bubble-background:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    width: 0;
+    height: 0;
+    border: 29px solid transparent;
+    border-top-color: whitesmoke;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -14.5px;
+    margin-bottom: -29px; }
+  #main-grid-container .logo {
+    grid-area: logo; }
+    #main-grid-container .logo img {
+      width: 100%;
+      height: auto;
+      margin: 20px; }
+
+#calculatrice-container {
+  grid-area: calculatrice;
+  padding: 50px;
+  margin: 0 auto; }
+  #calculatrice-container .displayInput {
+    width: 95%;
+    height: 100px;
+    text-align: center;
+    background-color: #333;
+    color: whitesmoke; }
+  #calculatrice-container .additionInput {
+    background-color: whitesmoke;
+    color: #000; }
+  #calculatrice-container .soustractionInput {
+    background-color: whitesmoke;
+    color: #000; }
+  #calculatrice-container .multiplicationInput {
+    background-color: whitesmoke;
+    color: #000; }
+  #calculatrice-container .cancelInput {
+    background-color: #e84118; }
+  #calculatrice-container .divisionInput {
+    background-color: whitesmoke;
+    color: #000; }
+  #calculatrice-container .evalInput {
+    background-color: whitesmoke;
+    color: #000; }
+  #calculatrice-container input {
+    width: 22%;
+    font-size: 50px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #e1b12c;
+    color: whitesmoke;
+    border-style: none;
+    box-shadow: 3px 3px 5px #333; }
+
+#calculatorForm {
+  margin: 0 auto;
+  width: 100%;
+  grid-column: 1; }
+
+#strCounter .red {
+  color: #e84118; }
+#strCounter .blue {
+  color: #00a8ff; }
+#strCounter .yellow {
+  color: #fbc531; }
+#strCounter .green {
+  color: #44bd32; }
+#strCounter h1 {
+  font-family: "Catull BQ Regular" !important;
+  font-size: 50px;
+  padding: 30px;
+  text-align: center; }
+  #strCounter h1 span {
+    margin: -5px; }
+#strCounter input {
+  width: 70%;
+  height: 40px;
+  display: block;
+  font-size: 25px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  border: none;
+  padding: 10px;
+  height: 20px;
+  border: 1px solid #eaeaea;
+  outline: none; }
+  #strCounter input:hover {
+    border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9; }
+  #strCounter input:focus {
+    border-color: #4d90fe; }
+#strCounter #str {
+  color: grey; }
+#strCounter #strBtn {
+  margin-top: 20px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  color: #757575;
+  cursor: default;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px; }
+  #strCounter #strBtn:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #222; }
+
+#searchbar {
+  width: 100%;
+  text-align: center; }
+
+#output {
+  margin-top: 45px;
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  color: black; }
+
+#additionListGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  border-radius: 50px;
+  width: 100%; }
+  #additionListGrid td {
+    width: 33%; }
+
+#number1, #number2 {
+  font-size: 60px;
+  color: whitesmoke;
+  font-weight: bold; }
+
+.symbols {
+  font-size: 50px;
+  font-weight: bold;
+  color: whitesmoke; }
+
+#inputAddition {
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid whitesmoke;
+  width: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #c23616; }
+
+#wrapperAddition {
+  margin-top: 40px;
+  background-color: #c23616;
+  width: 100%;
+  border-radius: 50px;
+  text-align: center; }
+  #wrapperAddition table {
+    padding: 20px;
+    width: 100%; }
+  #wrapperAddition #resultatAddition {
+    color: whitesmoke;
+    font-size: 20px; }
+
+#btnAddition {
+  color: #c23616;
+  padding: 12px;
+  font-size: 20px;
+  border-style: none;
+  font-weight: bold;
+  width: 80%; }
+
+#contactForm {
+  font-family: Ubuntu, Arial, sans-serif;
+  color: #B23535; }
+
+#contactForm form {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: 15px 15px;
+  background: #333;
+  padding-bottom: 55px;
+  border-radius: 25px; }
+
+#contactForm h1 {
+  margin: 6px 0 4px 16px;
+  font-size: 26px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase; }
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+  border: none;
+  font-size: 18px;
+  height: auto;
+  margin: 5px;
+  outline: 0;
+  padding: 8px;
+  width: 90%;
+  background-color: #e8eeef;
+  color: #000;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px; }
+
+#contactForm button {
+  padding: 12px 22px;
+  color: #fff;
+  background-color: #44bd32;
+  font-size: 24px;
+  text-align: center;
+  font-size: normal;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 30%;
+  border: 1px solid #44bd32;
+  border-width: 1px 1px 3px;
+  border-style: none; }
+
+#contactForm fieldset {
+  margin-bottom: 10px;
+  border: none;
+  padding: 0 auto; }
+
+#contactForm label {
+  display: block;
+  margin-bottom: 8px;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 20px; }
+
+#clear {
+  padding: 12px 22px;
+  color: whitesmoke;
+  background-color: #B23535;
+  font-size: 24px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin-right: 5%;
+  margin-left: 19%;
+  width: 30%;
+  border: 1px solid #a30000;
+  border-width: 1px 1px 3px;
+  border-style: none; }
+
+.wrapperSlider {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 3px 5px 20px #333; }
+
+.mySlides {
+  width: 100%; }
+
+.btnSlide1 {
+  position: absolute;
+  top: 45%;
+  left: 0px;
+  padding: 5px 15px;
+  color: lightgrey;
+  font-size: 50px;
+  cursor: zoom-in; }
+  .btnSlide1:hover {
+    color: white;
+    border-color: white; }
+
+.btnSlide2 {
+  position: absolute;
+  top: 45%;
+  right: 0px;
+  padding: 5px 15px;
+  color: lightgrey;
+  font-size: 50px;
+  cursor: zoom-in; }
+  .btnSlide2:hover {
+    color: white;
+    border-color: white; }
+
+.wrapper img {
+  width: 100%; }
+
+#header {
+  background-color: #0097e6;
+  width: 100%;
+  height: 200px;
+  text-transform: uppercase;
+  color: #dcdde1;
+  overflow: hidden; }
+  #header h1 {
+    text-transform: uppercase;
+    color: #dcdde1;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 60px; }
+  #header #logo {
+    position: absolute;
+    display: block;
+    font-size: 200px;
+    padding-top: 20px;
+    margin-left: -10px; }
+
+.space {
+  height: 50px; }
+
+#toDoList {
+  background-color: whitesmoke;
+  padding: 10px;
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 0px 0px 50px 0px; }
+  #toDoList .listContainer {
+    border-top: 10px solid #333;
+    border-left: 7px solid #333;
+    padding: 20px; }
+
+.effet {
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
+
+#firstList, #secondList {
+  list-style-type: none;
+  font-size: 22px;
+  padding: 10px; }
+
+#firstList {
+  font-weight: bold;
+  color: red; }
+
+#enter {
+  background-color: transparent;
+  color: grey;
+  cursor: pointer;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-left: 30px;
+  border: none; }
+
+#enter:hover {
+  color: green; }
+
+#userInput {
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid grey;
+  font-size: 25px;
+  padding: 10px;
+  width: 70%; }
+
+#labelImportant {
+  font-size: 20px;
+  text-align: center; }
+
+/* ===========================
+       CHECKBOX CUSTOM
+============================ */
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee; }
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc; }
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block; }
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */ }
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */ }
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */ }
+/* Custom ----------- */
+@media only screen and (max-width: 800px) {
+  #header > h1 {
+    font-size: 40px; }
+
+  #main-container {
+    margin: 20px 20px; }
+
+  #strCounter input {
+    width: 90%; }
+
+  #calculatrice-container {
+    padding: 5px;
+    margin: 0 auto; }
+    #calculatrice-container input {
+      width: 22%;
+      font-size: 30px;
+      margin: 3px; }
+    #calculatrice-container .displayInput {
+      width: 95%;
+      margin: 5px;
+      height: 50px; }
+
+  #additionListGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 95%; }
+
+  #contactForm form {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 5px 5px; }
+
+  #contactForm button {
+    padding: 14px 2px;
+    color: #fff;
+    background-color: #44bd32;
+    font-size: 16px;
+    text-align: center;
+    font-size: normal;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 30%;
+    border: 1px solid #44bd32;
+    border-width: 1px 1px 3px;
+    border-style: none; } }
+@media only screen and (max-width: 1300px) {
+  #logo {
+    visibility: hidden; }
+
+  #main-grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "calculatrice"  "calculatrice"  "bubble" "logo"; } }
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */ }
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */ }
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */ }
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */ }
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */ }
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */ }
+
+/*# sourceMappingURL=style.css.map */

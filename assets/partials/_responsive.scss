@@ -1,0 +1,154 @@
+
+
+//@media only screen and (max-width: 800px) {
+//	#main-grid-container {
+//		grid-template-columns: 1fr;
+//	}
+//	#main-container {
+//		margin: 20px 10px;
+//	}
+//	.logo {
+//		grid-column: 1;
+//		grid-row: 3;
+//	}
+//	.bubble {
+//		grid-column: 1;
+//		grid-row: 4;
+//	}
+
+//	#str {
+//		width: 90%;
+//	}
+//}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* Custom ----------- */
+@media only screen 
+and (max-width : 800px) {
+	#header > h1 {
+		font-size: 40px;
+	}
+	#main-container {
+		margin: 20px 20px;
+	}
+	#strCounter input {
+			width: 90%;
+		}
+	#calculatrice-container {
+		padding: 5px;
+		margin: 0 auto;
+		input {
+			width: 22%;
+			font-size: 30px;
+			margin: 3px;
+		}
+		.displayInput {
+			width: 95%;
+			margin: 5px;
+			height: 50px;
+		}
+	}
+	#additionListGrid {
+		display: grid;
+		grid-template-columns: 1fr;
+		width: 95%;
+	}
+	#contactForm form {
+		width: 95%;
+		margin: 0 auto;
+		margin-top: 50px;
+		padding: 5px 5px;
+	}
+	#contactForm button {
+		padding: 14px 2px;
+		color: #fff;
+		background-color: #44bd32;
+		font-size: 16px;
+		text-align: center;
+		font-size: normal;
+		text-transform: uppercase;
+		border-radius: 20px;
+		margin-right: 5%;
+		margin-left: 5%;
+		width: 30%;
+		border: 1px solid #44bd32;
+		border-width: 1px 1px 3px;
+		border-style: none;
+	}
+}
+
+@media only screen 
+and (max-width : 1300px) {
+	#logo {
+		visibility: hidden;
+	}
+	#main-grid-container {
+	grid-template-columns: 1fr;
+	grid-template-areas:
+     "calculatrice" 
+		 "calculatrice" 
+		 "bubble"
+     "logo";
+	}
+	
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

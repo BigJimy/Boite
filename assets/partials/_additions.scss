@@ -1,0 +1,58 @@
+#additionListGrid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+	border-radius: 50px;
+	width: 100%;
+	td {
+		width: 33%;
+	}
+}
+
+#number1, #number2 {
+	font-size: 60px;
+	color: whitesmoke;
+	font-weight: bold;
+}
+
+.symbols {
+	font-size: 50px;
+	font-weight: bold;
+	color: whitesmoke;
+}
+
+#inputAddition {
+	padding: 10px;
+	border-radius: 50%;
+	border: 2px solid whitesmoke;
+	width: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	color: #c23616;
+}
+
+#wrapperAddition {
+	margin-top: 40px;
+	background-color: #c23616;
+	width: 100%;
+	border-radius: 50px;
+	text-align: center;
+	table {
+		padding: 20px;
+		width: 100%;
+	}
+	#resultatAddition {
+		color: whitesmoke;
+		font-size: 20px;
+	}
+}
+
+#btnAddition {
+	color: #c23616;
+	padding: 12px;
+	font-size: 20px;
+	border-style: none;
+	font-weight: bold;
+	width: 80%;
+}

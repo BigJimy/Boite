@@ -1,0 +1,31 @@
+#clock {
+	color: #fff;
+	font-size: 30px;
+	padding: 0.4em 0em;
+	width: 80%;
+	margin: 0px;
+	font-family: Helvetica, Arial, serif;
+	text-align: center;
+}
+
+#horloge {
+    position: fixed;
+    left: -150px;
+    top: 300px;
+    width: 200px;
+    height: 60px;
+    background-color: rgba(47,54,64, 0.95);
+    z-index: 1;
+    color: white;
+    padding: 10px;
+    box-shadow: 5px 5px 3px black;
+    &:hover {
+        left: 0;
+    }
+    .logo-horloge {
+        position: absolute;
+        right: 10px;
+        top: 20%;
+        font-size: 40px;
+    }
+}

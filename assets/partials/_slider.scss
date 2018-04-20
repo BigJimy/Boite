@@ -1,0 +1,49 @@
+.wrapperSlider {
+//	max-width: 1000px;
+	position: relative;
+	margin: 0 auto;
+    text-align: center;
+    box-shadow: 3px 5px 20px #333;
+}
+
+.mySlides {
+	width: 100%;
+}
+
+.btnSlide1 {
+	position: absolute;
+	top: 45%;
+	left: 0px;
+	padding: 5px 15px;
+//	border-radius: 50%;
+//    border: 2px solid grey;
+    color: lightgrey;
+    font-size: 50px;
+    cursor: zoom-in;
+    &:hover {
+        color: white;
+        border-color: white;
+    }
+}
+
+.btnSlide2 {
+	position: absolute;
+	top: 45%;
+	right: 0px;
+	padding: 5px 15px;
+//	border-radius: 50%;
+//    border: 2px solid grey;
+    color: lightgrey;
+    font-size: 50px;
+    cursor: zoom-in;
+    &:hover {
+        color: white;
+        border-color: white;
+    }
+}
+
+.wrapper img {
+    width: 100%;
+//	width: 958px;
+//	height: 578px;
+}

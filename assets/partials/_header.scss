@@ -1,0 +1,28 @@
+
+
+#header {
+    background-color: #0097e6;
+    width: 100%;
+    height: 200px;
+    text-transform: uppercase;
+    color: #dcdde1;
+    overflow: hidden;
+    h1 {
+        text-transform: uppercase;
+        color: #dcdde1;
+        font-size: 60px;
+        text-align: center;
+        padding-top: 60px;
+    }
+    #logo {
+        position: absolute;
+        display: block;
+        font-size: 200px;
+        padding-top: 20px;
+        margin-left: -10px;
+    }
+}
+
+.space {
+    height: 50px;
+}
